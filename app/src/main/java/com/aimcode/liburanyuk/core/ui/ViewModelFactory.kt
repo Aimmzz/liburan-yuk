@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.aimcode.liburanyuk.core.di.Injection
 import com.aimcode.liburanyuk.core.domain.usecase.TourismUseCase
 import com.aimcode.liburanyuk.detail.DetailTourismViewModel
+import com.aimcode.liburanyuk.favorite.FavoriteViewModel
 import com.aimcode.liburanyuk.home.HomeViewModel
 
 class ViewModelFactory private constructor(private val tourismUseCase: TourismUseCase) :
@@ -29,9 +30,9 @@ class ViewModelFactory private constructor(private val tourismUseCase: TourismUs
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(tourismUseCase) as T
             }
-//            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
-//                FavoriteViewModel(tourismUseCase) as T
-//            }
+            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
+                FavoriteViewModel(tourismUseCase) as T
+            }
             modelClass.isAssignableFrom(DetailTourismViewModel::class.java) -> {
                 DetailTourismViewModel(tourismUseCase) as T
             }

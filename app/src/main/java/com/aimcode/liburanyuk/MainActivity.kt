@@ -3,15 +3,13 @@ package com.aimcode.liburanyuk
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.aimcode.liburanyuk.databinding.ActivityMainBinding
+import com.aimcode.liburanyuk.favorite.FavoriteFragment
 import com.aimcode.liburanyuk.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.nav_favorite -> {
-//                fragment = FavoriteFragment()
+                fragment = FavoriteFragment()
                 title = getString(R.string.menu_favorite)
             }
             R.id.nav_map -> {
