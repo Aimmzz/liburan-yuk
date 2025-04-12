@@ -1,5 +1,6 @@
 package com.aimcode.liburanyuk.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.aimcode.liburanyuk.core.data.Resource
 import com.aimcode.liburanyuk.core.ui.TourismAdapter
 import com.aimcode.liburanyuk.core.ui.ViewModelFactory
 import com.aimcode.liburanyuk.databinding.FragmentHomeBinding
+import com.aimcode.liburanyuk.detail.DetailTourismActivity
 
 class HomeFragment : Fragment() {
 
@@ -34,9 +36,9 @@ class HomeFragment : Fragment() {
 
             val tourismAdapter = TourismAdapter()
             tourismAdapter.onItemClick = { selectedData ->
-//                val intent = Intent(activity, DetailTourismActivity::class.java)
-//                intent.putExtra(DetailTourismActivity.EXTRA_DATA, selectedData)
-//                startActivity(intent)
+                val intent = Intent(activity, DetailTourismActivity::class.java)
+                intent.putExtra(DetailTourismActivity.EXTRA_DATA, selectedData)
+                startActivity(intent)
             }
 
             val factory = ViewModelFactory.getInstance(requireActivity())
